@@ -1,0 +1,8 @@
+{
+  "db": {
+    "client": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "name": "tutor-dev"
+  }
+}
