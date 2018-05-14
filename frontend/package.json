@@ -4,6 +4,7 @@
   "description": "tutO(r)",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint ./src --fix",
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
     "test": "jest"
