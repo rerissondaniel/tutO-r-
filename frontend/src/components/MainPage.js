@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class MainPage extends Component {
   render() {
@@ -6,6 +6,6 @@ export default class MainPage extends Component {
       <div className="ma2">
         <h1>tutO(r)</h1>
       </div>
-    )
+    );
   }
 }

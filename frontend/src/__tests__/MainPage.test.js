@@ -1,16 +1,16 @@
-import React from 'react'
-import { shallow } from 'enzyme'
+import React from 'react';
+import { shallow } from 'enzyme';
 
-import MainPage from '../components/MainPage'
+import MainPage from '../components/MainPage';
 
 describe('<MainPage /> component.', () => {
-  let wrapper
+  let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<MainPage />)
-  })
+    wrapper = shallow(<MainPage />);
+  });
 
   it('should render and not break', () => {
-    expect(wrapper).toBeTruthy()
-  })
-})
+    expect(wrapper).toBeTruthy();
+  });
+});
