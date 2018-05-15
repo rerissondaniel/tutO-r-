@@ -26,7 +26,8 @@
 			"/node_modules/",
 			"src/__tests__",
 			"src/index.js",
-			"webpack.config.js"
+			"webpack.config.js",
+			"dist/"
 		],
 		"coverageDirectory": "../docs/frontend/reports/coverage",
 		"coverageReporters": [
