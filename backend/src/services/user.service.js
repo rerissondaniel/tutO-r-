@@ -1,6 +1,6 @@
-const logger = require('../_utils/logger.util');
-const userRepository = require('../_repositories/user.repository');
-const errorUtil = require('../_utils/errors.util');
+const logger = require('../utils/logger.util');
+const userRepository = require('../repositories/user.repository');
+const errorUtil = require('../utils/errors.util');
 
 async function _create(user) {
 	try {

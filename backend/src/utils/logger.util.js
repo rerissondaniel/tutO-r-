@@ -1,4 +1,5 @@
-const logger = require('../_utils/config/logger-config.util');
+
+const logger = require('./config/logger-config.util');
 
 function _info(msg, obj) {
 	_logWithObj(logger.info, obj, msg);

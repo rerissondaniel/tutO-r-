@@ -29,10 +29,10 @@ $RECYCLE.BIN/
 node_modules/
 docs/_book/
 .tmp
-.idea
 npm-debug.log
 .build/
-lib
 *.orig
+
+dist/
 
 package-lock.json

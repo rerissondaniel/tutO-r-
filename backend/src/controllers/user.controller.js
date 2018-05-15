@@ -1,6 +1,6 @@
-const responses = require('../_utils/responses.util');
-const userService = require('../_services/user.service');
-const errorUtil = require('../_utils/express-error.util');
+const responses = require('../utils/responses.util');
+const userService = require('../services/user.service');
+const errorUtil = require('../utils/express-error.util');
 
 async function _create(req, res) {
 	const user = {

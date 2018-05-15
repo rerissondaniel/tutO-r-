@@ -36,6 +36,4 @@ node_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-/Idea files.
-*.iml
-*.xml
+/tmp/
