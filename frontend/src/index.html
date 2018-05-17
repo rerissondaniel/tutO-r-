@@ -8,6 +8,7 @@
   <body>
     <section id="root"></section>
   </body>
+  <script src="/src/firebase-config.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
@@ -15,15 +16,8 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
   <script>
-    const FIREBASE_CONFIG = {
-      apiKey: "AIzaSyAJUlrMFgopCjG9ttrOJVe5bPKzzSTJeqM",
-      authDomain: "tuto-r-11ad6.firebaseapp.com",
-      databaseURL: "https://tuto-r-11ad6.firebaseio.com",
-      projectId: "tuto-r-11ad6",
-      storageBucket: "tuto-r-11ad6.appspot.com",
-      messagingSenderId: "518529534195"
-    };
-    firebase.initializeApp(FIREBASE_CONFIG);
+    var firebaseConfig = FIREBASE_CONFIG;
+    firebase.initializeApp(firebaseConfig);
   </script>
   <script src="bundle.js"></script>
 </html>
