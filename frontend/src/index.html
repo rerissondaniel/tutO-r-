@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="src/tachyons.min.css">
+    <title>tutO(r)</title>
+  </head>
+  <body>
+    <section id="root"></section>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
+  <script>
+    const FIREBASE_CONFIG = {
+      apiKey: "AIzaSyAJUlrMFgopCjG9ttrOJVe5bPKzzSTJeqM",
+      authDomain: "tuto-r-11ad6.firebaseapp.com",
+      databaseURL: "https://tuto-r-11ad6.firebaseio.com",
+      projectId: "tuto-r-11ad6",
+      storageBucket: "tuto-r-11ad6.appspot.com",
+      messagingSenderId: "518529534195"
+    };
+    firebase.initializeApp(FIREBASE_CONFIG);
+  </script>
+  <script src="bundle.js"></script>
+</html>
