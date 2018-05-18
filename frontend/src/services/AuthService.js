@@ -1,8 +1,9 @@
+'use strict';
 import _ from "lodash";
 
 const authObj = firebase.auth();
 
-var userInfo = {};
+let userInfo = {};
 
 export const login = function login(email, password) {
   authObj.signInWithEmailAndPassword(email, password).then(function success(user) {
