@@ -1,0 +1,31 @@
+{
+	"name": "tuto-r-",
+	"version": "0.0.0",
+	"description": "",
+	"main": "frontend/index.js",
+	"scripts": {
+		"start": "concurrently \"cd backend && npm start\" \"cd frontend && npm start\"",
+		"lint": "concurrently \"cd backend && npm run lint\" \"cd frontend && npm run lint\"",
+		"install": "concurrently \"cd backend && npm install\" \"cd frontend && npm install\"",
+		"test": "concurrently \"cd backend && npm test\" \"cd frontend && npm test\"",
+		"docs": "concurrently \"cd backend && npm run jsdoc-all\" \"cd frontend && npm run jsdoc-all\""
+	},
+	"dependencies": {
+		"concurrently": "^3.5.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rerissondaniel/tutO-r-.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/rerissondaniel/tutO-r-/issues"
+	},
+	"homepage": "https://github.com/rerissondaniel/tutO-r-#readme"
+}

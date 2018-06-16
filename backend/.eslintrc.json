@@ -33,6 +33,10 @@
             "error",
             "always"
         ],
+        "curly": [
+            "error",
+            "all"
+        ],
         "require-await": "error"
     }
 }

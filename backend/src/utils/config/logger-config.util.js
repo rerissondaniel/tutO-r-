@@ -1,7 +1,7 @@
 const appRoot = require('app-root-path');
 const winston = require('winston');
 
-const MAX_LOG_SILE_SIZE = 5242880;// 5MB
+const MAX_LOG_FILE_SIZE = 5242880;// 5MB
 const MAX_FILES = 5;
 
 const options = {
@@ -10,7 +10,7 @@ const options = {
 		filename: `${appRoot}/logs/app.log`,
 		handleExceptions: true,
 		json: true,
-		maxsize: MAX_LOG_SILE_SIZE,
+		maxsize: MAX_LOG_FILE_SIZE,
 		maxFiles: MAX_FILES,
 		colorize: false,
 	},

@@ -1,14 +1,23 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "rules": {
-    "semi": [2, "always"],
-    "curly": ["error", "all"],
-    "indent": ["error", 2]
-  }
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"rules": {
+		"semi": [
+			2,
+			"always"
+		],
+		"curly": [
+			"error",
+			"all"
+		],
+		"indent": [
+			"error",
+			2
+		]
+	}
 }
