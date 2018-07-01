@@ -14,12 +14,12 @@ export default class Themes extends Component {
           <p className="f2 blue mb0">Themes</p>
  		    </div>
    	      <div className="vh-75 w-70 h6 pre ma3">
-            <ThemeCard theme="Dynamic Programming" requisites="Bitmasks, Backtracking" status="Explorado"/>
-            <ThemeCard theme="Bitmasks" requisites="Number Representation, Numeric Bases" status="Explorando"/>
-            <ThemeCard theme="Brute force" requisites="None" status="Explorar"/>
-            <ThemeCard theme="Greedy" requisites="None" status="Explorar"/>
+          <ThemeCard theme="Dynamic Programming" requisites="Bitmasks, Backtracking" status="Explorado"/>
+          <ThemeCard theme="Bitmasks" requisites="Number Representation, Numeric Bases" status="Explorando"/>
+          <ThemeCard theme="Brute force" requisites="None" status="Explorar"/>
+          <ThemeCard theme="Greedy" requisites="None" status="Explorar"/>
 	      </div>
-  </div>
- );
+  		</div>
+ 		);
 	 }
 }
