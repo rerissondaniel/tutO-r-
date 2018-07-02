@@ -1,9 +1,8 @@
-import axios from "axios";
+import { get } from "../services/HttpService";
 import { USER_URL, LOGIN_USER } from "./index";
 
-export function loginUser(user, callback) {
-  const request = axios
-    .get(`${USER_URL}/${user.email}`);
+export function loginUser(user, authorization) {
+  const request = get(USER_URL, authorization);
 
   return {
     type: LOGIN_USER,

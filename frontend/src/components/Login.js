@@ -52,10 +52,13 @@ class Login extends Component {
   };
 
   login() {
-    console.log('oi');
     login(this.state.email, this.state.password, (user) => {
-      console.log(user);
-      this.props.loginUser(user);
+      const requestHeader = {
+        email: user.email, 
+        token: user.refreshToken
+      };
+      
+      this.props.loginUser(requestHeader);
       this.clearState();
     });
   };

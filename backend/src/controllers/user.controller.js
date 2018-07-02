@@ -15,13 +15,16 @@ async function _create(req, res) {
 }
 
 async function _get(req, res) {
-	const userName = req.params.name;
-	try {
-		const user = await userService.get(userName);
-		return responses.ok(res, user);
-	} catch (error) {
-		return errorUtil.toResponse(res, error);
-	}
+  const userName = req.params.name;
+  console.log(req);
+
+  return;
+	// try {
+	// 	const user = await userService.get(userName);
+	// 	return responses.ok(res, user);
+	// } catch (error) {
+	// 	return errorUtil.toResponse(res, error);
+	// }
 }
 
 module.exports = {
