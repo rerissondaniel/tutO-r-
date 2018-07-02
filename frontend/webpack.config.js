@@ -1,5 +1,6 @@
 /* eslint-disable */
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -26,5 +27,14 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin]
+  devServer: {
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
+  },
+  plugins: [htmlPlugin, 
+    new webpack.HotModuleReplacementPlugin({
+      multiStep: true
+    })
+  ]
 };
