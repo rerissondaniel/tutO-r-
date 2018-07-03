@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export default class ProfileCard extends Component {
   constructor(props) {
     super(props);
-  }
+  };
 
  	render() {
  		let stateFlag = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQwAAAC8CAMAAAC672BgAAAAgVBMVEXwAAAAAAD///+7AAD0AAD96Oj5sLD7ycn4oaH3nJz2iIj1gYH5s7P1f3/83Nz3np794eH2j4/wFBT+8vL+7e370dH0bm7yPDzxHR37ysrzVlb0amr0YGDyRET1dnb/+PjxMDD6wcH4qKjyQUH0ZGTzT0/xJib3lpbyNjb2jIz6vLxJo1gwAAADRElEQVR4nO3Y6VKbUABAYUobzSLBbGbTbDZG8/4PWC5LOKmmM7XTacqc8ydwgenwleVi9OVv9fVb9N8lBhIDiYHEQGIgMZAYSAwkBhIDiYHEQGIgMZAYSAwkBhIDiYHEQGIgMZAYSAwkBhIDiYHEQGIgMZAYSAwkBhIDiYHEQGIgMZAYSAwkBhIDiYHEQGIgMZAYSAwkBhIDiYHEQGIgMZAYSAwkBhIDiYHEQGIgMZAYSAwkBhIDiYHEQGIgMZAYSAwkBhIDiYHEQGIgMZAYSAwkBhIDiYHEQFeH8Zam3WJp306X2U+Sdk4dyp2e0+1ksu1s6sNmh2zkOJj9AcUVYozjON7nS904vst+JjEq9plXq3fVUdtq5NgojFZ2RuN8qRfHN9nP7c8Yw3W9fl8fVDZqGkbcOccYJ92iXrXHZPW0fwt77sJIPwAmT/tuuKwmTcOIZ2cY99zhkG1O86Vhea081pdIYFk0DWNyGWNd/+cP+ruk2CMelkPZ4vaTFNeJES725SWMabbx4fyQbOS2Ws72Xn/uH46uE2O1zs8ID9BW0Si7e1bZ6ubsiHC3DKqVwemV0xCM5HscHD54m8zyF27xTjnehY6P59dKsHptEkYvn1tskl9jlENvjccIZ9p/+PCZEc52CoxuNGv0bdIrzmn+IcZrtiW8QqLHxWKRY5w9QOdNe4D2ouoNe+HV2q+WC4x5/WodEua3u1aM6UWMm3I8a1lghOdt6RMmXY+Nw8jP+TQdX/WKumFmOgqTsuVmmoQzz58WYaG1ykZazZuO5xjhdnj/ofaUDbzgQy1ubaLSp4kfauP8yo+KL453n/ABIxqehkblnz7qT/jPz8WvEePQ3pVfWoP2Lkwfknbd7qXY9Jze9vvzNj7JNp0wkm7+xOL6MP5lYiAxkBhIDCQGEgOJgcRAYiAxkBhIDCQGEgOJgcRAYiAxkBhIDCQGEgOJgcRAYiAxkBhIDCQGEgOJgcRAYiAxkBhIDCQGEgOJgcRAYiAxkBhIDCQGEgOJgcRAYiAxkBhIDCQGEgOJgcRAYiAxkBhIDCQGEgOJgcRAYiAxkBhIDCQGEgOJgcRAYiAxkBhIDCQGEgOJgcRAYiAxkBhIjLofpNFgrXe/iLkAAAAASUVORK5CYII=";
@@ -11,9 +11,9 @@ export default class ProfileCard extends Component {
 	  let codeforcesLogo = "https://static1.squarespace.com/static/5a076df2268b966170809a2c/t/5a1e09b924a694106d19e512/1511918040964/codeforces_logo.png";
 	  let {name, institution, username, codeforcesUser, city} = this.props;
 	  return (
-	    <article className="profile-card h7 dib br3 ma3 mr2 ba b--black-10 shadow-5">
+	    <article className="profile-card vh-75 dib ma3 mr2">
 	      <div className="tc">
-	        <img src="http://tachyons.io/img/avatar_1.jpg" className="br-100 h5 w5 dib ba b--black-05 pa2" title="Photo of a kitty staring at you"/>
+	        <img src="http://tachyons.io/img/avatar_1.jpg" className="br-100 w5 dib pl3 pb3 pr3 mt4" title="Photo of a kitty staring at you"/>
 	        <p className="f3 mb2 mt0">{name}</p>
 	        <p className="f4 tc mt0">({username})</p>
 	        <p className="f4 fw4 mb0 b">Institution: <a href="#">{institution}</a></p>
@@ -26,5 +26,5 @@ export default class ProfileCard extends Component {
 	      </div>
 	    </article>
 	  );
-  }
+  };
 }

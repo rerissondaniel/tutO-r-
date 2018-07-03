@@ -3,7 +3,7 @@ import BadgesCard from './BadgesCard';
 import ProfileCard from './ProfileCard';
 import './Profile.css';
 
-export default class MainPage extends Component {
+export default class Profile extends Component {
   constructor(props) {
     super(props);
   }
