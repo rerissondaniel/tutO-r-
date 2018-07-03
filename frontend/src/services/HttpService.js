@@ -3,13 +3,14 @@ import axios from "axios";
 function getConfigs(authorization) {
   var config = {
     headers: {
-      'Content-Type': 'application/json;charset=UTF-8',
+      "Content-Type": "application/json;charset=UTF-8",
       "Access-Control-Allow-Origin": "*",
     }
-  }
+  };
 
   if(authorization) {
-    config.headers['Authorization'] = authorization;
+    const authString = `${authorization.token} ${authorization.email}`
+    config.headers['Authorization'] = authString;
   }
 
   return config;
@@ -23,16 +24,41 @@ export const get = function get(url, authorization) {
 export const post = function post(url, data, authorization) {
   const config = getConfigs(authorization);
   config.data = data;
-  return axios.post(url, config);
+  return axios.post({
+    method: 'post', 
+    url: url, 
+    headers: config.headers,
+    body: config.data
+  });
+};
+
+export const put = function put(url, data, authorization) {
+  const config = getConfigs(authorization);
+  config.data = data;
+  return axios.put({
+    method: 'put', 
+    url: url, 
+    headers: config.headers,
+    body: config.data
+  });
 };
 
 export const patch = function patch(url, data, authorization) {
   const config = getConfigs(authorization);
   config.data = data;
-  return axios.patch(url, config);
+  return axios.post({
+    method: 'patch', 
+    url: url, 
+    headers: config.headers,
+    body: config.data
+  });
 };
 
 export const del = function del(url, authorization) {
   const config = getConfigs(authorization);
-  return axios.delete(url, config);
+  return axios.delete({
+    method: 'get', 
+    url: url, 
+    headers: config.headers
+  });
 };
