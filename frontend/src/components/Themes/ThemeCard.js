@@ -27,5 +27,5 @@ export default class ThemeCard extends Component {
         </article>
       </div>
     );
-  }
+  };
 }
