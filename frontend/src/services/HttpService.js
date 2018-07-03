@@ -23,13 +23,7 @@ export const get = function get(url, authorization) {
 
 export const post = function post(url, data, authorization) {
   const config = getConfigs(authorization);
-  config.data = data;
-  return axios.post({
-    method: 'post', 
-    url: url, 
-    headers: config.headers,
-    body: config.data
-  });
+  return axios.post(url, data);
 };
 
 export const put = function put(url, data, authorization) {
@@ -46,7 +40,7 @@ export const put = function put(url, data, authorization) {
 export const patch = function patch(url, data, authorization) {
   const config = getConfigs(authorization);
   config.data = data;
-  return axios.post({
+  return axios.patch({
     method: 'patch', 
     url: url, 
     headers: config.headers,
