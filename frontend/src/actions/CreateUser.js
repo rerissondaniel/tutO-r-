@@ -1,7 +1,7 @@
 import { post } from "../services/HttpService";
-import { USER_URL, LOGIN_USER, CREATE_USER } from "./index";
+import { USER_URL, CREATE_USER } from "./index";
 
-export function loginUser(body) {
+export function createUser(body) {
   const request = post(USER_URL, body);
 
   return {

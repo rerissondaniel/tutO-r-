@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { loginUser } from "../actions/LoginUser";
-import { createUser, login } from "../services/AuthService";
+import { createUser } from "../actions/CreateUser";
+import { create, login } from "../services/AuthService";
 
 class Auth extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Auth extends Component {
     this.button = this.button.bind(this);
     this.clearState = this.clearState.bind(this);
     this.login = this.login.bind(this);
+    this.signUp = this.signUp.bind(this);
     this.setCredentials = this.setCredentials.bind(this);
   };
 
@@ -72,7 +74,7 @@ class Auth extends Component {
   };
 
   signUp() {
-    createUser(this.state.email, this.state.password, user => {
+    create(this.state.email, this.state.password, user => {
       const body = {email: user.email};
       this.props.createUser(body);
       this.clearState();
@@ -128,4 +130,4 @@ class Auth extends Component {
   }
 }
 
-export default connect(null, { loginUser })(Auth);
+export default connect(null, { loginUser, createUser })(Auth);
