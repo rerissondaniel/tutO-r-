@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../actions/LoginUser";
 import { createUser, login } from "../services/AuthService";
 
-class Login extends Component {
+class Auth extends Component {
   constructor(props) {
     super(props);
 
@@ -72,14 +72,18 @@ class Login extends Component {
   };
 
   signUp() {
-    
+    createUser(this.state.email, this.state.password, user => {
+      const body = {email: user.email};
+      this.props.createUser(body);
+      this.clearState();
+    });
   };
 
   setCredentials = field => event => {
     this.setState({
       [field]: event.target.value
     });
-  }
+  };
 
   render() {
     const loginFlag = this.state.login;
@@ -124,4 +128,4 @@ class Login extends Component {
   }
 }
 
-export default connect(null, { loginUser })(Login);
+export default connect(null, { loginUser })(Auth);

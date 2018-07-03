@@ -14,9 +14,10 @@ export const login = function login(email, password, callback) {
   });
 };
 
-export const createUser = function createUser(email, password) {
+export const createUser = function createUser(email, password, callback) {
   authObj.createUserWithEmailAndPassword(email, password).then(function success(user) {
     configUser(user);
+    callback(user);
   }).catch(function error(error) {
     console.error(error);
   });
