@@ -9,5 +9,5 @@ export default class MainPage extends Component {
         <Auth />
       </div>
     );
-  }
+  };
 };
