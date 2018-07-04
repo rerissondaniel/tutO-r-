@@ -15,13 +15,15 @@ class Auth extends Component {
     };
 
     this.changeState = this.changeState.bind(this);
-    this.logInBackGround = this.logInBackGround.bind(this);
-    this.signUpBackGround = this.signUpBackGround.bind(this);
+    this.loginCss = this.loginCss.bind(this);
+    this.singUpCss = this.singUpCss.bind(this);
     this.button = this.button.bind(this);
     this.clearState = this.clearState.bind(this);
     this.login = this.login.bind(this);
     this.signUp = this.signUp.bind(this);
     this.setCredentials = this.setCredentials.bind(this);
+    this.signUpHeader = this.signUpHeader.bind(this);
+    this.loginHeader = this.loginHeader.bind(this);
   };
 
   changeState() {
@@ -29,16 +31,16 @@ class Auth extends Component {
     this.setState({login: !currentValue});
   };
 
-  logInBackGround() {
+  loginCss() {
     const loginFlag = this.state.login;
-    const background = loginFlag? '#FFFFFF' : '#A463F2';
-    return background;
+    const classes = loginFlag? 'no-bg height-40' : 'purple-bg height-40';
+    return classes;
   };
 
-  signUpBackGround () {
+  singUpCss () {
     const loginFlag = this.state.login;
-    const background = loginFlag? '#A463F2' : '#FFFFFF';
-    return background;
+    const classes = loginFlag? 'purple-bg height-40' : 'no-bg height-40';
+    return classes;
   };
 
   button() {
@@ -87,39 +89,48 @@ class Auth extends Component {
     });
   };
 
+  signUpHeader() {
+    return this.state.login ? "auth-card-header no-color" : "auth-card-header purple-color";
+  };
+
+  loginHeader() {
+    return this.state.login ? "auth-card-header purple-color" : "auth-card-header no-color";
+  };
+
   render() {
-    const loginFlag = this.state.login;
-    const loginBg = this.logInBackGround();
-    const singUpBg = this.signUpBackGround();
+    const loginCss = this.loginCss();
+    const singUpCss = this.singUpCss();
+    const signUpHeader = this.signUpHeader();
+    const loginHeader = this.loginHeader();
     
-    return (
-      <div style={{'height': '200px', 'width': '300px'}}>
+    return (  
+      <div className="login-card">
         <article className="ba b--purple content-center h-100">
-          <div className="flex justify-center h-20" style={{'backgroundColor': "#FFFFFF"}}>
+          <div className="flex justify-center h-20 no-bg">
             <div className="h-100 w-50 tc">
-              <div style={{'height': '40px', 'backgroundColor': loginBg}}
+              <div className={loginCss}
                 onClick={this.changeState}>
-                <span style={{'fontSize': '25px', 'color': loginFlag? '#A463F2' : '#FFFFFF'}}>
+                <span className={loginHeader}>
                   Log In
                 </span>
               </div>
             </div>
             <div className="h-100 w-50 tc">
-              <div style={{'height': '40px', 'backgroundColor': singUpBg}}
+              <div className={singUpCss}
                 onClick={this.changeState}>
-                <span style={{'fontSize': '25px', 'color': loginFlag? '#FFFFFF' : '#A463F2'}}>Sign Up</span>
+                <span className={signUpHeader}>Sign Up</span>
               </div>
             </div>
           </div>
           <div className="flex justify-center h-40">
             <form className="flex flex-column pa4 black-80">
-              <div className="measure" style={{'borderRadius': '50px'}}>
-                <input id="username" className="input-reset ba b--black-20 mb2 db w-100" 
-                  type="text" aria-describedby="name-desc" style={{'borderRadius': '50px'}} onChange={this.setCredentials('email')}/>
+              <div className="measure br-50">
+                <input id="username" className="input-reset ba b--black-20 mb2 db w-100 br-50" 
+                  type="text" aria-describedby="name-desc" onChange={this.setCredentials('email')}/>
               </div>
               <div className="measure">
-                <input id="name" className="input-reset ba b--black-20 mb2 db w-100" 
-                  type="password" aria-describedby="name-desc" style={{'borderRadius': '50px'}} onChange={this.setCredentials('password')}/>
+                <input id="name" className="input-reset ba b--black-20 mb2 db w-100 br-50" 
+                  type="password" aria-describedby="name-desc" onChange={this.setCredentials('password')}/>
               </div>
             </form>
           </div>
@@ -128,6 +139,6 @@ class Auth extends Component {
       </div>
     );
   }
-}
+};
 
 export default connect(null, { loginUser, createUser })(Auth);

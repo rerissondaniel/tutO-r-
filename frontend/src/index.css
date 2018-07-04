@@ -1,0 +1,28 @@
+.login-card {
+  height: 200px;
+  width: 300px;
+}
+
+.no-bg {
+  background-color: #FFFFFF;
+}
+
+.purple-bg {
+  background-color: #A463F2;
+}
+
+.height-40 {
+  height: 40px;
+}
+
+.auth-card-header {
+  font-size: 25px;
+}
+
+.no-color {
+  color: #FFFFFF;
+}
+
+.purple-color {
+  color: #A463F2;
+}
