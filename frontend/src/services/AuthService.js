@@ -5,17 +5,19 @@ const authObj = firebase.auth();
 
 let userInfo = {};
 
-export const login = function login(email, password) {
+export const login = function login(email, password, callback) {
   authObj.signInWithEmailAndPassword(email, password).then(function success(user) {
     configUser(user);
+    callback(user);
   }).catch(function error(error) {
     console.error(error);
   });
 };
 
-export const createUser = function createUser(email, password) {
+export const create = function create(email, password, callback) {
   authObj.createUserWithEmailAndPassword(email, password).then(function success(user) {
     configUser(user);
+    callback(user);
   }).catch(function error(error) {
     console.error(error);
   });
