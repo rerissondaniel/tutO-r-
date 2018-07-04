@@ -138,7 +138,7 @@ class Auth extends Component {
         </article>
       </div>
     );
-  }
+  };
 };
 
 export default connect(null, { loginUser, createUser })(Auth);
