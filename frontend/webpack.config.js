@@ -1,6 +1,5 @@
 /* eslint-disable */
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const webpack = require('webpack');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -8,7 +7,9 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
-  entry: ["./src/index.js"],
+  entry: [
+    "./src/index.js"
+  ],
   output: {
     path: __dirname + "src",
     publicPath: "/",
@@ -19,22 +20,25 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
+        use: [
+          'babel-loader', 
+          'eslint-loader'
+        ]
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [
+          'style-loader', 
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          'file-loader'
+        ]
       }
     ]
   },
-  devServer: {
-    proxy: {
-      '/api': 'http://localhost:3000'
-    }
-  },
-  plugins: [htmlPlugin, 
-    new webpack.HotModuleReplacementPlugin({
-      multiStep: true
-    })
-  ]
+  plugins: [htmlPlugin]
 };
