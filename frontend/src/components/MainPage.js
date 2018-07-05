@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { IntlProvider, FormattedMessage, addLocaleData } from 'react-intl';
+
+import Notifications from './Notifications';
 import LanguageSelector from './LanguageSelector';
 
 import ptLocale from 'react-intl/locale-data/pt';
@@ -28,6 +30,25 @@ const translations = {
   'en': enMessages
 };
 
+const notifications = [
+  {
+    description: "You have solved all the problem about Dynamic Programming",
+    readed: false
+  },
+  {
+    description: "Your rating increase in +124",
+    readed: false
+  },
+  {
+    description: "You are now International Master on Codeforces",
+    readed: true
+  },
+  {
+    description: "Codeforces Round #666 is comming in one hour",
+    readed: false
+  }
+];
+
 class MainPage extends Component {
   constructor(props) {
     super(props);
@@ -50,11 +71,7 @@ class MainPage extends Component {
 
     return (
       <IntlProvider locale={language} messages={translations[language]}>
-        <div className="ma2 flex flex-column items-center">
-          <LanguageSelector countries={countries} onLanguageSelected={this.changeLanguage} />
-          <h3>
-            <FormattedMessage id="hello-world" />
-          </h3>
+        <div className="ma2 inline-flex items-center">
         </div>
       </IntlProvider>
     );

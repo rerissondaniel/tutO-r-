@@ -1,3 +1,29 @@
+.notifications-dropdown-content {
+  width: 400px;
+}
+
+.notification__item-card {
+  min-height: 50px;
+}
+
+.dropdown-content {
+  min-width: 180px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.small-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+}
+
 .language-selector__item {
   width: 35px;
   height: 35px;
