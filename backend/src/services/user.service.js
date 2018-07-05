@@ -1,11 +1,17 @@
 const userRepository = require('../repositories/user.repository');
+const errors = require('../utils/errors.util');
+const messages = require('../utils/system-messages');
 
-function _create(user, callback) {
-	const response = userRepository.save(user, callback);
+async function _create(user) {
+	return await userRepository.save(user);
 }
 
-function getByEmail(email, callback) {
-	const response = userRepository.get(email, callback);
+async function getByEmail(email) {
+	const user = await userRepository.get(email);
+	if (!user) {
+		throw errors.notFound(messages.UserNotFound);
+	}
+	return user;
 }
 
 module.exports = {

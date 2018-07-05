@@ -21,6 +21,12 @@ function _toResponse(res, error) {
 		case CODES.INVALID_DATA: {
 			return responses.badRequest(res, error.message);
 		}
+		case CODES.CONFLICT: {
+			return responses.conflict(res, error.message);
+		}
+		case CODES.NOT_FOUND: {
+			return responses.notFound(res, error.message);
+		}
 		default: {
 			return responses.internalError(res, error.message);
 		}

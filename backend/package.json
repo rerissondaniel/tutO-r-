@@ -6,7 +6,8 @@
 		"start": "node ./bin/www",
 		"lint": "eslint ./  --ignore-path .gitignore --fix || true",
 		"jsdoc-all": "jsdoc -p -r -d ../docs/backend/docs -c jsdoc-conf.json",
-		"test": "nyc mocha src/tests/"
+		"coverage-console": "nyc mocha --timeout 1000 test/**/*.js",
+		"test": "mocha --timeout 10000 test/**/*.js --exit"
 	},
 	"dependencies": {
 		"app-root-path": "^2.0.1",
