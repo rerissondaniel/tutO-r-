@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-class LanguageSelector extends PureComponent {
+class LanguageSelectorItem extends PureComponent {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -28,11 +28,11 @@ class LanguageSelector extends PureComponent {
   }
 }
 
-LanguageSelector.propTypes = {
+LanguageSelectorItem.propTypes = {
   country: PropTypes.string.isRequired,
   language: PropTypes.string.isRequired,
   isSelected: PropTypes.bool.isRequired,
   onLanguageSelected: PropTypes.func.isRequired
 };
 
-export default LanguageSelector;
+export default LanguageSelectorItem;
