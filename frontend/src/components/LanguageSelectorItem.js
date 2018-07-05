@@ -5,13 +5,13 @@ class LanguageSelectorItem extends PureComponent {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-  }
+  };
 
   handleClick(event) {
     event.preventDefault();
     const { language, onLanguageSelected } = this.props;
     onLanguageSelected(language);
-  }
+  };
 
   render() {
     const { country, isSelected } = this.props;
@@ -25,8 +25,8 @@ class LanguageSelectorItem extends PureComponent {
         </div>
       </div>
     );
-  }
-}
+  };
+};
 
 LanguageSelectorItem.propTypes = {
   country: PropTypes.string.isRequired,

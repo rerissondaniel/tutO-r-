@@ -13,14 +13,14 @@ class LanguageSelector extends Component {
     };
 
     this.handleLanguageSelect = this.handleLanguageSelect.bind(this);
-  }
+  };
 
   handleLanguageSelect(selectedLanguage) {
     this.setState({
       selectedLanguage
     });
     this.props.onLanguageSelected(selectedLanguage);
-  }
+  };
 
   render() {
     const { countries } = this.props;
@@ -45,8 +45,8 @@ class LanguageSelector extends Component {
         }
       </div>
     );
-  }
-}
+  };
+};
 
 LanguageSelector.propTypes = {
   countries: PropTypes.arrayOf(

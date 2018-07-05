@@ -20,7 +20,7 @@ const countries = [
   {
     name: 'united-states',
     language: 'en'
-  },
+  }
 ];
 
 const translations = {
@@ -37,13 +37,13 @@ class MainPage extends Component {
     };
 
     this.changeLanguage = this.changeLanguage.bind(this);
-  }
+  };
 
   changeLanguage(language) {
     this.setState({
       language
     });
-  }
+  };
 
   render() {
     const { language } = this.state;
