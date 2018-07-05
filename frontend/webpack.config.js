@@ -1,5 +1,6 @@
 /* eslint-disable */
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
