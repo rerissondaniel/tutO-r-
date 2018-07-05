@@ -9,7 +9,8 @@
  */
 const _CODES = {
 	INVALID_DATA: 1,
-	NOT_FOUND: 2
+	NOT_FOUND: 2,
+	CONFLICT: 3
 };
 
 /**
@@ -18,11 +19,8 @@ const _CODES = {
  * @returns {Error} an invalid data error.
  */
 function _invalidData(message) {
-	const error = new Error(message);
-	error.code = _CODES.INVALID_DATA;
-	return error;
+	return _buildError(message, _CODES.INVALID_DATA);
 }
-
 
 /**
  * Creates a not found error.
@@ -30,13 +28,27 @@ function _invalidData(message) {
  * @returns {Error} a not found error.
  */
 function _notFound(message) {
+	return _buildError(message, _CODES.NOT_FOUND);
+}
+
+/**
+ * Creates a not conflict error.
+ * @param {string} message The message of the error.
+ * @returns {Error} a not found error.
+ */
+function _conflict(message) {
+	return _buildError(message, _CODES.CONFLICT);
+}
+
+function _buildError(message, code) {
 	const error = new Error(message);
-	error.code = _CODES.NOT_FOUND;
+	error.code = code;
 	return error;
 }
 
 module.exports = {
 	CODES: _CODES,
 	invalidData: _invalidData,
-	notFound: _notFound
+	notFound: _notFound,
+	conflict: _conflict
 };
