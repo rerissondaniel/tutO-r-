@@ -40,5 +40,15 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
+  },
+  plugins: [htmlPlugin, 
+    new webpack.HotModuleReplacementPlugin({
+      multiStep: true
+    })
+  ],
   plugins: [htmlPlugin]
 };
