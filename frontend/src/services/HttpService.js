@@ -9,7 +9,7 @@ function getConfigs(authorization) {
   };
 
   if(authorization) {
-    const authString = `${authorization.token} ${authorization.email}`
+    const authString = `${authorization.token} ${authorization.email}`;
     config.headers['Authorization'] = authString;
   }
 

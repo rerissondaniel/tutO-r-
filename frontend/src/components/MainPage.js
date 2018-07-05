@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Statistics from './Statistics/Statistics';
+import Statistics from './Statistics';
 import Auth from './Auth';
 
 export default class MainPage extends Component {
@@ -8,6 +8,7 @@ export default class MainPage extends Component {
       <div className="ma2">
         <h1>tutO(r)</h1>
         <Auth />
+        <Statistics />
       </div>
     );
   };

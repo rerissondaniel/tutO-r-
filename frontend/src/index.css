@@ -26,3 +26,7 @@
 .purple-color {
   color: #A463F2;
 }
+
+.botao-tag + .botao-tag {
+	margin-left: .75rem; 
+}

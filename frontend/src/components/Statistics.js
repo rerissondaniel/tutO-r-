@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "./Statistics.css";
 
 // Temporary function
 function userTagList() {
