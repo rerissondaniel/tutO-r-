@@ -1,9 +1,9 @@
 version: 2
-jobs:
-  checkout:
+checkout:
     post:
       - mkdir -p /home/circleci/tutor/backend/logs
-      - touch /home/circleci/tutor/backend/app.log
+      - touch /home/circleci/tutor/backend/logs/app.log
+jobs:
 
   build:
     working_directory: ~/tutor
