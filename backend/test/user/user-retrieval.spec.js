@@ -19,7 +19,7 @@ describe('User retrieval tests', () => {
 		expect(result.body.email).to.equal('jao@mail.com');
 	});
 
-	it('should not get non existent user', async () => {
+	it('should not get user non existent user', async () => {
 		const result = await api.get(`${baseUrl}/user`).set({authorization: 'BAAHUu0P68SD6F1S jao@mail.com'}).send();
 		expect(result.status).to.equal(httpStatus.NOT_FOUND);
 	});
