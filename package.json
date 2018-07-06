@@ -8,8 +8,7 @@
 		"lint": "concurrently \"cd backend && npm run lint\" \"cd frontend && npm run lint\"",
 		"install": "concurrently \"cd backend && npm install\" \"cd frontend && npm install\"",
 		"test": "concurrently \"cd backend && npm test\" \"cd frontend && npm test\"",
-		"docs": "concurrently \"cd backend && npm run jsdoc-all\" \"cd frontend && npm run jsdoc-all\"",
-		"coverage": "concurrently \"cd backend && npm run coverage\" \"cd frontend && npm run \""
+		"docs": "concurrently \"cd backend && npm run jsdoc-all\" \"cd frontend && npm run jsdoc-all\""
 	},
 	"dependencies": {
 		"concurrently": "^3.5.1"
