@@ -20,10 +20,10 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: logdir
+          name: log-dir
           command: mkdir -p /home/circleci/tutor/backend/logs
       -run:
-          name: logfile
+          name: log-file
           command: /home/circleci/tutor/backend/logs/app.log
       - run:
           name: test
