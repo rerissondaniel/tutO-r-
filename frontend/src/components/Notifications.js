@@ -49,12 +49,12 @@ class Notifications extends Component {
     const { notifications } = this.state;
 
     return (
-      <div className="notifications">
-        <div className="dropdown relative dib">
-          <div className="icon inline-flex items-center">
-            <img className="br-100" src={notificationsIcon} />
+      <div className="notifications h-100">
+        <div className="dropdown relative dib h-100">
+          <div className="inline-flex items-center h-100">
+            <img className="icon br-100 h-100" src={notificationsIcon} />
           </div>
-          <div className="notifications-dropdown-content dropdown-content dn absolute z-1 ba br1 b--dark-blue pv3 ph3">
+          <div className="notifications-dropdown-content dropdown-content z-max dn absolute ba br1 b--dark-blue pv3 ph3">
             <div className="flex flex-column b">
               { this.renderNotifications(notifications) }
             </div>

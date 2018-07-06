@@ -1,4 +1,12 @@
 {
-  "hello-world": "Olá Mundo",
-  "notifications.no-notifications": "Sem notificações"
+  "notifications.no-notifications": "Sem notificações",
+  "search-bar.search": "Buscar",
+  "dropdown-menu.profile": "Perfil",
+  "dropdown-menu.settings": "Configurações",
+  "dropdown-menu.help": "Ajuda",
+  "dropdown-menu.exit": "Sair",
+  "side-menu.training": "Treinamento",
+  "side-menu.statistics": "Estatística",
+  "side-menu.calendar": "Calendário",
+  "side-menu.repository": "Repositório"
 }

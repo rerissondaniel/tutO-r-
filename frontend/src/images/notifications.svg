@@ -1,18 +1,6 @@
 <?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 47.834 47.834" style="enable-background:new 0 0 47.834 47.834;" xml:space="preserve" width="512px" height="512px" class=""><g><g>
-	<g>
-		<path d="M46.878,41.834H0.956l0.005-1.005c0.021-4.065,2.87-7.548,6.759-8.437V20.697C7.72,11.766,14.985,4.5,23.916,4.5    c8.932,0,16.198,7.266,16.198,16.197v11.695c3.889,0.89,6.737,4.372,6.759,8.437L46.878,41.834z M3.042,39.834h41.75    c-0.458-2.908-2.804-5.241-5.8-5.61l-0.878-0.107V20.697c0-7.828-6.369-14.197-14.198-14.197C16.088,6.5,9.72,12.869,9.72,20.697    v13.419l-0.878,0.107C5.845,34.592,3.5,36.925,3.042,39.834z" data-original="#000000" class="active-path" data-old_color="#F8F7F6" fill="#FFFFFF"/>
-	</g>
-	<g>
-		<path d="M21.125,5.988h-2V4.792C19.125,2.149,21.274,0,23.917,0c2.642,0,4.791,2.149,4.791,4.792v1.176h-2V4.792    C26.708,3.253,25.456,2,23.917,2c-1.539,0-2.792,1.253-2.792,2.792V5.988z" data-original="#000000" class="active-path" data-old_color="#F8F7F6" fill="#FFFFFF"/>
-	</g>
-	<g>
-		<path d="M23.903,47.834c-3.941,0-7.375-2.799-8.164-6.656l1.959-0.4c0.6,2.93,3.209,5.057,6.205,5.057    c3.058,0,5.677-2.179,6.228-5.18l1.967,0.361C31.373,44.967,27.927,47.834,23.903,47.834z" data-original="#000000" class="active-path" data-old_color="#F8F7F6" fill="#FFFFFF"/>
-	</g>
-	<g>
-		<rect x="8.72" y="32.231" width="3.682" height="2" data-original="#000000" class="active-path" data-old_color="#F8F7F6" fill="#FFFFFF"/>
-	</g>
-	<g>
-		<rect x="18.167" y="32.231" width="20.947" height="2" data-original="#000000" class="active-path" data-old_color="#F8F7F6" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve"><g><g>
+	<g id="notifications">
+		<path d="M255,510c28.05,0,51-22.95,51-51H204C204,487.05,226.95,510,255,510z M420.75,357V216.75    c0-79.05-53.55-142.8-127.5-160.65V38.25C293.25,17.85,275.4,0,255,0c-20.4,0-38.25,17.85-38.25,38.25V56.1    c-73.95,17.85-127.5,81.6-127.5,160.65V357l-51,51v25.5h433.5V408L420.75,357z" data-original="#000000" class="active-path" data-old_color="#CEABAB" fill="#FFFFFF"/>
 	</g>
 </g></g> </svg>

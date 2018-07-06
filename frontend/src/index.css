@@ -1,12 +1,23 @@
-.notifications-dropdown-content {
-  width: 400px;
+/* TopBar  */
+.top-bar { height: 55px; }
+
+/* SearchBar */
+.search-bar-input {
+  height: 35px;
+  width: 93%;
+  border-top-left-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
 }
 
-.notification__item-card {
-  min-height: 50px;
+.search-bar-button {
+  width: 7%;
+  border-top-right-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
 }
 
+/* Dropdown */
 .dropdown-content {
+  margin-top: 3px;
   min-width: 180px;
 }
 
@@ -14,16 +25,16 @@
   display: block;
 }
 
-.small-icon {
-  width: 20px;
-  height: 20px;
+/* Notifications */
+.notifications {
+  height: 100%;
 }
 
-.icon {
-  width: 35px;
-  height: 35px;
+.notifications-dropdown-content {
+  width: 400px;
 }
 
+/* LanguageSelector */
 .language-selector__item {
   width: 35px;
   height: 35px;
@@ -33,31 +44,23 @@
   padding: 2px;
 }
 
-.login-card {
-  height: 200px;
-  width: 300px;
-}
-
-.no-bg {
-  background-color: #FFFFFF;
-}
-
-.purple-bg {
-  background-color: #A463F2;
-}
-
-.height-40 {
+/* Icons */
+.profile-icon {
+  width: 40px;
   height: 40px;
 }
 
-.auth-card-header {
-  font-size: 25px;
+.small-icon {
+  width: 20px;
+  height: 20px;
 }
 
-.no-color {
-  color: #FFFFFF;
+.icon {
+  width: 30px;
+  height: 30px;
 }
 
-.purple-color {
-  color: #A463F2;
+.auth-container {
+  height: 300px;
+  width: 400px;
 }

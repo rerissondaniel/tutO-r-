@@ -7,13 +7,13 @@ class NotificationItem extends PureComponent {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-  }
+  };
 
   handleClick(event) {
     event.preventDefault();
     const { index, onNotificationRead } = this.props;
     onNotificationRead(index);
-  }
+  };
 
   render() {
     const { description } = this.props;
