@@ -19,7 +19,7 @@ class LanguageSelectorItem extends PureComponent {
 
     return (
       <div className="language-selector__item" onClick={this.handleClick}>
-        <div className={`language-selector__item-icon-border 
+        <div className={`language-selector__item-icon-border
           flex items-center br-100 ba bw1 ${isSelected ? 'b--white' : 'b--transparent'}`}>
           <img className="br-100" src={flagIcon} />
         </div>
