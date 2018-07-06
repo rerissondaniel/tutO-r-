@@ -10,7 +10,7 @@ async function saveUser(user) {
 	try {
 		return await new User(user).save();
 	} catch (error) {
-		logger.error(`error while creating user: ${error.message}`);
+		logger.info(`error while creating user: ${error.message}`);
 		if (error.code === mongoErrors.DuplicateKey) {
 			throw errors.conflict(messages.UserNotFound);
 		}
@@ -25,7 +25,7 @@ async function getByEmail(email) {
 	try {
 		return await User.findOne({email: email});
 	} catch (error) {
-		logger.error(`error while retrieving user: ${error.message}`);
+		logger.info(`error while retrieving user: ${error.message}`);
 		throw error;
 	}
 }
