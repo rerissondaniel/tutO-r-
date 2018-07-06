@@ -1,5 +1,10 @@
 version: 2
 jobs:
+  checkout:
+    post:
+      - mkdir -p /home/circleci/tutor/backend/logs
+      - touch /home/circleci/tutor/backend/app.log
+
   build:
     working_directory: ~/tutor
     docker:
@@ -19,12 +24,6 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run:
-          name: logdir
-          command: mkdir -p /home/circleci/tutor/backend/logs
-      -run:
-          name: logfile
-          command: /home/circleci/tutor/backend/logs/app.log
       - run:
           name: test
           command: npm test
