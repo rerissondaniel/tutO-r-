@@ -8,7 +8,9 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
-  entry: ["./src/index.js"],
+  entry: [
+    "./src/index.js"
+  ],
   output: {
     path: __dirname + "src",
     publicPath: "/",
@@ -19,11 +21,23 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
+        use: [
+          'babel-loader', 
+          'eslint-loader'
+        ]
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [
+          'style-loader', 
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          'file-loader'
+        ]
       }
     ]
   },
@@ -36,5 +50,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin({
       multiStep: true
     })
-  ]
+  ],
+  plugins: [htmlPlugin]
 };
