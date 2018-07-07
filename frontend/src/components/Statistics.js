@@ -43,9 +43,6 @@ function userTagList() {
 };
 
 export default class Statistics extends Component {
-  constructor(props) {
-    super(props);
-  };
 
   // temporary images for illustrative purposes only
   userVerdicts() {
@@ -78,13 +75,12 @@ export default class Statistics extends Component {
   }
 
   userTags() {
-    var tagBar = userTagList().map(tag => 
-    	<a className="f3 link dim br1 ph3 pv2 mb2 dib white bg-green botao-tag" href={tag.url} key={tag.name}> {tag.name} </a>);
     return (
   		<nav className="ph3 ph5-ns pv4">
         <h1 className="f3 dark-green">Tags</h1>
   			<div className="nowrap overflow-x-auto">
-    			{tagBar}
+    			{userTagList().map(tag => 
+            <a className="f3 link dim br1 ph3 pv2 mb2 dib white bg-green botao-tag" href={tag.url} key={tag.name}> {tag.name} </a>)}
     		</div>
     	</nav>
     );
@@ -92,7 +88,7 @@ export default class Statistics extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <h1 className="className=ph3 ph5-ns pv4 f2 tracked blue">Estatísticas</h1>
         
         <div className="cf ph3 ph5-ns">
@@ -106,7 +102,7 @@ export default class Statistics extends Component {
 
         {this.userActivities()}
         {this.userTags()}
-      </div>
+      </React.Fragment>
     );
   };
 };
