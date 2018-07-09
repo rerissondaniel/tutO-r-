@@ -1,4 +1,6 @@
 {
+  "auth-box.login": "Log In",
+  "auth-box.signup": "Sign Up",
   "notifications.no-notifications": "No notifications",
   "search-bar.search": "Search",
   "dropdown-menu.profile": "Profile",
@@ -8,5 +10,12 @@
   "side-menu.training": "Training",
   "side-menu.statistics": "Statistics",
   "side-menu.calendar": "Calendar",
-  "side-menu.repository": "Repository"
+  "side-menu.repository": "Repository",
+  "auth-box.username": "Username",
+  "auth-box.password": "Password",
+  "auth-box.forget-password": "Forget your password?",
+  "auth-box.remember-me": "Remember me",
+  "auth-box.full-name": "Full Name",
+  "auth-box.email": "E-mail",
+  "auth-box.confirm-password": "Confirm password"
 }

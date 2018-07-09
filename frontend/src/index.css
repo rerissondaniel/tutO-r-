@@ -1,3 +1,22 @@
+/* AuthBox */
+.auth-box {
+  width: 400px;
+  height: 400px;
+}
+
+.tabs-container {
+  height: 50px;
+}
+
+.content-button {
+  height: 35px;
+}
+
+.content-button:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
 /* TopBar  */
 .top-bar { height: 55px; }
 
@@ -9,6 +28,7 @@
   border-bottom-left-radius: 0.125rem;
 }
 
+.button
 .search-bar-button {
   width: 7%;
   border-top-right-radius: 0.125rem;
