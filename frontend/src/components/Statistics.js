@@ -49,7 +49,7 @@ export default class Statistics extends Component {
     return (
       <div className="pv4">
         <h1 className="f3 dark-green">Veredictos</h1>
-        <img src="/src/components/Statistics/exampleStatisticsVerdicts.png" className="mw-100" alt="night sky over water"/>  
+        <img src="/src/components/Statistics/exampleStatisticsVerdicts.png" className="mw-100"/>  
       </div>
     );
   }
@@ -59,7 +59,7 @@ export default class Statistics extends Component {
     return (
       <div className="pv4">
         <h1 className="f3 dark-green">Linguagens de Programação</h1>
-        <img src="/src/components/Statistics/exampleStatisticsLanguages.png" className="mw-100" alt="night sky over water"/>  
+        <img src="/src/components/Statistics/exampleStatisticsLanguages.png" className="mw-100"/>  
       </div>
     );
   }
@@ -69,7 +69,7 @@ export default class Statistics extends Component {
     return (
       <div className="ph3 ph5-ns pv4">
         <h1 className="f3 dark-green pa2">Atividades</h1>
-        <img src="/src/components/Statistics/exampleStatisticsActivities.png" className="mw-100 pa2" alt="night sky over water"/>  
+        <img src="/src/components/Statistics/exampleStatisticsActivities.png" className="mw-100 pa2"/>  
       </div>
     );
   }
@@ -89,7 +89,7 @@ export default class Statistics extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="className=ph3 ph5-ns pv4 f2 tracked blue">Estatísticas</h1>
+        <h1 className="ph3 ph5-ns pv4 f2 tracked blue">Estatísticas</h1>
         
         <div className="cf ph3 ph5-ns">
           <div className="fl w-100 w-50-l pa2">
