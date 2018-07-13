@@ -31,6 +31,11 @@ function _internalError(res) {
 	return res.status(httpStatusCodes.INTERNAL_SERVER_ERROR).send();
 }
 
+function _unauthorized(res, message) {
+	res.statusMessage = message;
+	return res.status(httpStatusCodes.UNAUTHORIZED).send();
+}
+
 module.exports = {
 	created: _created,
 	badRequest: _badRequest,
@@ -38,4 +43,5 @@ module.exports = {
 	conflict: _conflict,
 	notFound: _notFound,
 	internalError: _internalError,
+	unauthorized: _unauthorized
 };

@@ -1,6 +1,6 @@
-const errorUtil = require('../utils/express-error.util');
+const errorUtil = require('../utils/express/express-error.util');
 const userService = require('../services/user.service');
-const responses = require('../utils/responses.util');
+const responses = require('../utils/express/responses.util');
 const messages = require('../utils/system-messages');
 
 async function _create(req, res) {
@@ -15,8 +15,7 @@ async function _create(req, res) {
 }
 
 async function _get(req, res) {
-	const authString = req.headers['authorization'];
-	const email = authString.split(' ')[1];
+	const email = req.userEmail;
 
 	try {
 		const user = await userService.get(email);

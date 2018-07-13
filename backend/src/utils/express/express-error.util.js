@@ -6,8 +6,8 @@
  */
 const responses = require('./responses.util');
 
-const errors = require('./errors.util');
-const logger = require('./logger.util');
+const errors = require('../errors.util');
+const logger = require('../logger.util');
 
 const CODES = errors.CODES;
 
