@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import { IntlProvider, FormattedMessage, addLocaleData } from 'react-intl';
-import LanguageSelector from './LanguageSelector';
+import { IntlProvider, addLocaleData } from 'react-intl';
+
+import TopBar from './TopBar';
+import SideMenu from './SideMenu';
+
+import Auth from './Auth';
 
 import ptLocale from 'react-intl/locale-data/pt';
 import enLocale from 'react-intl/locale-data/en';
@@ -47,14 +51,18 @@ class MainPage extends Component {
 
   render() {
     const { language } = this.state;
-
+    
     return (
       <IntlProvider locale={language} messages={translations[language]}>
-        <div className="ma2 flex flex-column items-center">
-          <LanguageSelector countries={countries} onLanguageSelected={this.changeLanguage} />
-          <h3>
-            <FormattedMessage id="hello-world" />
-          </h3>
+        <div className="inline-flex w-100">
+          <div className="w-20">
+            <SideMenu />
+          </div>
+          <div className="w-80">
+            <TopBar
+              countries={countries}
+              onLanguageSelected={this.changeLanguage} />
+          </div>
         </div>
       </IntlProvider>
     );
