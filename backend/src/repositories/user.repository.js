@@ -6,6 +6,18 @@ const mongoErrors = require('mongo-errors');
 const errors = require('../utils/errors.util');
 const messages = require('../utils/system-messages');
 
+async function _update(user) {
+	try {
+		return await User.findOneAndUpdate(
+			{'email': user.email},
+			user,
+			{new: true, upsert: true});
+	} catch (error) {
+		logger.error(error);
+		throw error;
+	}
+}
+
 async function saveUser(user) {
 	try {
 		return await new User(user).save();
@@ -14,7 +26,7 @@ async function saveUser(user) {
 		if (error.code === mongoErrors.DuplicateKey) {
 			throw errors.conflict(messages.UserNotFound);
 		}
-		if(error.errors){
+		if (error.errors) {
 			throw errors.invalidData(messages.RequiredFieldNotPresent);
 		}
 		throw error;
@@ -32,5 +44,6 @@ async function getByEmail(email) {
 
 module.exports = {
 	save: saveUser,
-	get: getByEmail
+	get: getByEmail,
+	update: _update
 };

@@ -29,6 +29,9 @@ function _toResponse(res, error) {
 		case CODES.NOT_FOUND: {
 			return responses.notFound(res, error.message);
 		}
+		case CODES.UNAUTHORIZED: {
+			return responses.unauthorized(res, error.message);
+		}
 		default: {
 			logger.error(`Internal error: ${error}`);
 			return responses.internalError(res, error.message);
