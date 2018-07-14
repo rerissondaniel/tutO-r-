@@ -6,6 +6,13 @@ async function _create(user) {
 	return await userRepository.save(user);
 }
 
+async function _update(user, email){
+	if(email !== user.email){
+		throw errors.unauthorized(messages.Unauthorized);
+	}
+	return await userRepository.update(user);
+}
+
 async function getByEmail(email) {
 	const user = await userRepository.get(email);
 	if (!user) {
@@ -16,5 +23,6 @@ async function getByEmail(email) {
 
 module.exports = {
 	create: _create,
-	get: getByEmail
+	get: getByEmail,
+	update: _update
 };
