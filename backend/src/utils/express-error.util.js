@@ -7,6 +7,8 @@
 const responses = require('./responses.util');
 
 const errors = require('./errors.util');
+const logger = require('./logger.util');
+
 const CODES = errors.CODES;
 
 
@@ -21,7 +23,14 @@ function _toResponse(res, error) {
 		case CODES.INVALID_DATA: {
 			return responses.badRequest(res, error.message);
 		}
+		case CODES.CONFLICT: {
+			return responses.conflict(res, error.message);
+		}
+		case CODES.NOT_FOUND: {
+			return responses.notFound(res, error.message);
+		}
 		default: {
+			logger.error(`Internal error: ${error}`);
 			return responses.internalError(res, error.message);
 		}
 	}

@@ -1,23 +1,29 @@
+const errorUtil = require('../utils/express-error.util');
 const userService = require('../services/user.service');
-const User = require('../models/user.model');
+const responses = require('../utils/responses.util');
+const messages = require('../utils/system-messages');
 
-function _create(req, res) {
-	const user = new User(req.body);
-  
-	userService.create(user, (response) => {
-		res.contentType('application/json');
-		res.send(response);
-	});
+async function _create(req, res) {
+	const user = req.body;
+
+	try {
+		const created = await userService.create(user);
+		return responses.created(res, created, messages.UserCreated);
+	} catch (error) {
+		return errorUtil.toResponse(res, error);
+	}
 }
 
-function _get(req, res) {
+async function _get(req, res) {
 	const authString = req.headers['authorization'];
-	const userEmail = authString.split(' ')[1];
+	const email = authString.split(' ')[1];
 
-	userService.get(userEmail, (response) => {
-		res.contentType('application/json');
-		res.send(response);
-	});
+	try {
+		const user = await userService.get(email);
+		return responses.ok(res, user);
+	} catch (error) {
+		return errorUtil.toResponse(res, error);
+	}
 }
 
 module.exports = {

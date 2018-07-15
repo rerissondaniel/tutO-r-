@@ -1,37 +1,33 @@
 const User = require('../models/user.model');
 
-function saveUser(user, callback) {
-	var response = {};
-  
-	user.save(function(err) {
-		if (err) {
-			response.message = err.message;
-			//11000: MongoError's duplicated key
-			response.status = err.code == 11000 ? 409 : 500;
-		} else {
-			response.status = 201; //HTTP created code
+const logger = require('../utils/logger.util');
+const mongoErrors = require('mongo-errors');
+
+const errors = require('../utils/errors.util');
+const messages = require('../utils/system-messages');
+
+async function saveUser(user) {
+	try {
+		return await new User(user).save();
+	} catch (error) {
+		logger.info(`error while creating user: ${error.message}`);
+		if (error.code === mongoErrors.DuplicateKey) {
+			throw errors.conflict(messages.UserNotFound);
 		}
-		callback(response);
-	});
+		if(error.errors){
+			throw errors.invalidData(messages.RequiredFieldNotPresent);
+		}
+		throw error;
+	}
 }
 
-function _get(userName) {
-	return User.findOne({name: userName});
-}
-
-function getByEmail(email, callback) {
-	var response = {};
-	User.findOne({email: email}, function(err, doc) {
-		if(err) {
-			response.status = 500;
-		} else if(doc) {
-			response.data = doc;
-			response.status = 200;
-		} else {
-			response.status = 400;
-		}
-		callback(response);
-	});
+async function getByEmail(email) {
+	try {
+		return await User.findOne({email: email});
+	} catch (error) {
+		logger.info(`error while retrieving user: ${error.message}`);
+		throw error;
+	}
 }
 
 module.exports = {
