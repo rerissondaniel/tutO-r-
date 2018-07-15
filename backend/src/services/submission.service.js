@@ -12,14 +12,13 @@ async function _updateUserSubmissions(userId, handle) {
 		submissions = await codeforces.getAll(handle);
 	}
 
+	submissions = submissions.reverse();
+
 	for (const sub of submissions) {
 		sub.user = userId;
 		sub.tags = await Promise.all(sub.tags.map(tag => tagService.findOrCreate(tag)));
+		await submissionsRepo.save(sub);
 	}
-
-	return await Promise.all(
-		submissions.map(sub => submissionsRepo.save(sub))
-	);
 }
 
 async function _getAllSubmissions(userId, handle) {
@@ -28,6 +27,6 @@ async function _getAllSubmissions(userId, handle) {
 }
 
 module.exports = {
-	updateUserSubmissios: _updateUserSubmissions,
+	updateUserSubmissions: _updateUserSubmissions,
 	getAllSubmissions: _getAllSubmissions
 };
