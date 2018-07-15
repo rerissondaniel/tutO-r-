@@ -45,7 +45,7 @@ describe('User update tests', () => {
 			.set({authorization: 'BAAHUu0P68SD6F1S rer@mail.com'})
 			.send(user);
 
-		expect(result.status).to.equal(httpStatus.UNAUTHORIZED);
+		expect(result.status).to.equal(httpStatus.NOT_FOUND);
 	});
 
 	async function getUser() {
