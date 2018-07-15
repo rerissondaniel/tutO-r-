@@ -1,4 +1,4 @@
-const userRepository = require('../repositories/user.repository');
+const userRepository = require('../repositories/database/user.repository');
 const errors = require('../utils/errors.util');
 const messages = require('../utils/system-messages');
 
@@ -10,7 +10,11 @@ async function _update(user, email){
 	if(email !== user.email){
 		throw errors.unauthorized(messages.Unauthorized);
 	}
-	return await userRepository.update(user);
+	const updated = await userRepository.update(user);
+	if(!updated){
+		throw errors.notFound(messages.UserNotFound);
+	}
+	return updated;
 }
 
 async function getByEmail(email) {

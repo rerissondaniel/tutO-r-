@@ -1,7 +1,8 @@
 const responses = require('../../utils/express/responses.util');
 const messages = require('../../utils/system-messages');
+const userService = require('../../services/user.service');
 
-function _authenticate(req, res, next) {
+async function _authenticate(req, res, next) {
 	const auth = req.headers['authorization'];
 	let email = null;
 
@@ -9,11 +10,14 @@ function _authenticate(req, res, next) {
 		email = auth.split(' ')[1];
 	}
 
-	if (!email) {
+	const user = await userService.get(email);
+
+	if (!email || !user) {
 		return responses.unauthorized(res, messages.Unauthorized);
 	}
 
 	req.userEmail = email;
+	req.userId = user.id;
 	next();
 }
 

@@ -1,17 +1,17 @@
-const User = require('../models/user.model');
+const User = require('../../models/user.model');
 
-const logger = require('../utils/logger.util');
+const logger = require('../../utils/logger.util');
 const mongoErrors = require('mongo-errors');
 
-const errors = require('../utils/errors.util');
-const messages = require('../utils/system-messages');
+const errors = require('../../utils/errors.util');
+const messages = require('../../utils/system-messages');
 
 async function _update(user) {
 	try {
 		return await User.findOneAndUpdate(
 			{'email': user.email},
 			user,
-			{new: true, upsert: true});
+			{new: true});
 	} catch (error) {
 		logger.error(error);
 		throw error;

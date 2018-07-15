@@ -2,7 +2,6 @@ const httpStatus = require('http-status-codes');
 const expect = require('chai').expect;
 const api = require('../util/api');
 const userUtil = require('./util/user.util');
-const messages = require('../../src/utils/system-messages');
 const baseUrl = require('../util/config').baseUrl;
 
 
@@ -39,14 +38,14 @@ describe('User update tests', () => {
 	});
 
 	it('should not update with wrong email authorization', async () => {
-			const user = await getUser();
-			user.name = 'rerisson';
+		const user = await getUser();
+		user.name = 'rerisson';
 
-			const result = await api.put(`${baseUrl}/user`)
-				.set({authorization: 'BAAHUu0P68SD6F1S rer@mail.com'})
-				.send(user);
+		const result = await api.put(`${baseUrl}/user`)
+			.set({authorization: 'BAAHUu0P68SD6F1S rer@mail.com'})
+			.send(user);
 
-			expect(result.status).to.equal(httpStatus.UNAUTHORIZED);
+		expect(result.status).to.equal(httpStatus.UNAUTHORIZED);
 	});
 
 	async function getUser() {
