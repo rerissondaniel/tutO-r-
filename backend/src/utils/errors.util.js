@@ -10,7 +10,8 @@
 const _CODES = {
 	INVALID_DATA: 1,
 	NOT_FOUND: 2,
-	CONFLICT: 3
+	CONFLICT: 3,
+	UNAUTHORIZED: 4
 };
 
 /**
@@ -40,6 +41,16 @@ function _conflict(message) {
 	return _buildError(message, _CODES.CONFLICT);
 }
 
+/**
+ * Creates a not unauthorized error.
+ * @param {string} message The message of the error.
+ * @returns {Error} a unauthorized error.
+ */
+function _unauthorized(message){
+	return _buildError(message, _CODES.UNAUTHORIZED);
+}
+
+
 function _buildError(message, code) {
 	const error = new Error(message);
 	error.code = code;
@@ -50,5 +61,6 @@ module.exports = {
 	CODES: _CODES,
 	invalidData: _invalidData,
 	notFound: _notFound,
-	conflict: _conflict
+	conflict: _conflict,
+	unauthorized: _unauthorized
 };

@@ -1,9 +1,20 @@
-const userRepository = require('../repositories/user.repository');
+const userRepository = require('../repositories/database/user.repository');
 const errors = require('../utils/errors.util');
 const messages = require('../utils/system-messages');
 
 async function _create(user) {
 	return await userRepository.save(user);
+}
+
+async function _update(user, email){
+	if(email !== user.email){
+		throw errors.unauthorized(messages.Unauthorized);
+	}
+	const updated = await userRepository.update(user);
+	if(!updated){
+		throw errors.notFound(messages.UserNotFound);
+	}
+	return updated;
 }
 
 async function getByEmail(email) {
@@ -16,5 +27,6 @@ async function getByEmail(email) {
 
 module.exports = {
 	create: _create,
-	get: getByEmail
+	get: getByEmail,
+	update: _update
 };

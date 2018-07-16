@@ -5,7 +5,7 @@ const logger = require('../logger.util');
 function _config(dbUrl) {
 	mongoose.Promise = bluebird;
 
-	mongoose.connect(`${dbUrl}`, {useMongoClient: true}).then(() => {
+	mongoose.connect(`${dbUrl}`, {useNewUrlParser: true}).then(() => {
 		logger.info(`Connected to database at :${dbUrl}`);
 	}).catch(error => {
 		logger.error(`Couldn't connect to database at : ${dbUrl}\n`, error);
