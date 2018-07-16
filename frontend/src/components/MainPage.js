@@ -6,6 +6,7 @@ import TopBar from './TopBar';
 import SideMenu from './SideMenu';
 
 import Auth from './Auth';
+import Statistics from "./Statistics";
 
 import ptLocale from 'react-intl/locale-data/pt';
 import enLocale from 'react-intl/locale-data/en';
@@ -72,6 +73,7 @@ class MainPage extends Component {
                     <TopBar
                       countries={countries}
                       onLanguageSelected={this.changeLanguage} />
+                    <Route path='/statistics' component={Statistics} />
                   </div>
                 </div>
               </IntlProvider>
