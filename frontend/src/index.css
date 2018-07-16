@@ -64,3 +64,7 @@
   height: 300px;
   width: 400px;
 }
+
+.botao-tag + .botao-tag {
+	margin-left: .75rem; 
+}
