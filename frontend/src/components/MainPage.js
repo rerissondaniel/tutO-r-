@@ -14,7 +14,7 @@ import enLocale from 'react-intl/locale-data/en';
 import ptMessages from '../translations/pt';
 import enMessages from '../translations/en';
 
-import { BrowserRouter, Route, Switch, Router, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
 import { createBrowserHistory } from 'history';
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
