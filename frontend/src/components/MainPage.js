@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+
 import { IntlProvider, addLocaleData } from 'react-intl';
 
-import SideMenu from './SideMenu';
 import TopBar from './TopBar';
+import SideMenu from './SideMenu';
 
-import AuthBox from './AuthBox';
+import Auth from './Auth';
 
 import ptLocale from 'react-intl/locale-data/pt';
 import enLocale from 'react-intl/locale-data/en';
@@ -14,7 +15,7 @@ import enMessages from '../translations/en';
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
 
-const DEFAULT_COUNTRY = 1;
+const DEFAULT_COUNTRY = 0;
 
 const countries = [
   {
@@ -48,14 +49,21 @@ class MainPage extends Component {
       language
     });
   };
-
+  
   render() {
     const { language } = this.state;
     
     return (
       <IntlProvider locale={language} messages={translations[language]}>
         <div className="w-100 h-100 inline-flex items-center justify-center pt6">
-          <AuthBox />
+          <div className="w-20">
+            <SideMenu />
+          </div>
+          <div className="w-80">
+            <TopBar
+              countries={countries}
+              onLanguageSelected={this.changeLanguage} />
+          </div>
         </div>
       </IntlProvider>
     );

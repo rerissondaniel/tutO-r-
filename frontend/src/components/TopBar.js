@@ -9,19 +9,19 @@ import LanguageSelector from './LanguageSelector';
 const notifications = [
   {
     description: "You have solved all the problems about Dynamic Programming",
-    readed: false
+    read: false
   },
   {
     description: "Your rating increase in +124",
-    readed: false
+    read: false
   },
   {
     description: "You are now International Master on Codeforces",
-    readed: true
+    read: true
   },
   {
     description: "Codeforces Round #666 is comming in one hour",
-    readed: false
+    read: false
   }
 ];
 

@@ -1,4 +1,3 @@
-/* AuthBox */
 .auth-box {
   width: 400px;
   height: 400px;
@@ -83,4 +82,8 @@
 .auth-container {
   height: 300px;
   width: 400px;
+}
+
+.botao-tag + .botao-tag {
+	margin-left: .75rem; 
 }
