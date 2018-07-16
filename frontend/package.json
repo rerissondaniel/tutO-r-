@@ -74,11 +74,12 @@
 	"dependencies": {
 		"axios": "^0.18.0",
 		"file-loader": "^1.1.11",
+		"history": "^4.7.2",
 		"lodash": "^4.17.5",
 		"react": "^16.3.2",
 		"react-dom": "^16.3.2",
 		"react-redux": "^4.0.0",
-		"react-router-dom": "^4.0.0",
+		"react-router-dom": "^4.3.1",
 		"redux": "^3.0.4",
 		"redux-promise": "^0.5.3"
 	}
