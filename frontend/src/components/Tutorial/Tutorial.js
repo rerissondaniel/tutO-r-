@@ -10,14 +10,15 @@ const references = [
   "https://www.geeksforgeeks.org/dynamic-programming/",
   "https://www.hackerearth.com/practice/algorithms/dynamic-programming/introduction-to-dynamic-programming-1/tutorial/"
 ];
+
 class Tutorial extends Component {
   constructor(props) {
   	super(props);
   };
-
+  
   render() {
   	return (
-  		<div className="w-70 fr ma4">
+  		<div className="w-70 fr ma3">
   			<p className="green f2 mb1">Dynamic Programming</p>
   			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -35,21 +36,17 @@ class Tutorial extends Component {
   			{
   				problems.map((problem, i) => {
   					return (
-  						<div>
-  							<a href={problem}>- {problem}</a>
-  						</div>
+  						<p className="ma1">- <a href={problem}>{problem}</a></p>
   					);
   				})
   			}
   			<p className="blue f2 mb1">References</p>
   			{
 	  			references.map((reference, i) => {
-	  					return (
-	  						<div>
-	  							<a href={reference}>- {reference}</a>
-	  						</div>
-	  					);
-	  				})
+	  				return (
+	  					<p className="ma1">- <a href={reference}>{reference}</a></p>
+	  				);
+	  			})
 	  		}
   		</div>
   	);
