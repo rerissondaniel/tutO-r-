@@ -15,10 +15,10 @@ class Tutorial extends Component {
   constructor(props) {
   	super(props);
   };
-  
+
   render() {
   	return (
-  		<div className="w-70 fr ma3">
+  		<div className="w-70 ma3">
   			<p className="green f2 mb1">Dynamic Programming</p>
   			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
