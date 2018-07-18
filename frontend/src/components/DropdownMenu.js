@@ -4,7 +4,20 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import defaultProfileIcon from '../images/default-profile-icon.svg';
 
-class DropdownMenu extends Component {  
+import { logoutUser } from '../actions/LogoutUser';
+import { connect } from "react-redux";
+
+class DropdownMenu extends Component {
+  constructor(props) {
+    super(props);
+
+    this.logout = this.logout.bind(this);
+  };
+
+  logout() {
+    this.props.logoutUser();
+  };
+
   render() {
     const { completeName, profileIcon } = this.props;
     const profIcon = profileIcon ? profileIcon : defaultProfileIcon;
@@ -33,7 +46,7 @@ class DropdownMenu extends Component {
               <FormattedMessage id="dropdown-menu.help" />  
             </a>
             <hr className="w-100" />
-            <a className="no-underline red" href="#">
+            <a className="no-underline red" href="#" onClick={this.logout}>
               <FormattedMessage id="dropdown-menu.exit" />  
             </a>
           </div>
@@ -48,4 +61,4 @@ DropdownMenu.propTypes = {
   profileImg: PropTypes.any
 };
 
-export default DropdownMenu;
+export default connect(null, { logoutUser })(DropdownMenu);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 class SideMenu extends Component {
   render() {
@@ -19,9 +20,9 @@ class SideMenu extends Component {
           </div>
           <hr className="w-100"/>
           <div className="b pv3">
-            <a className="no-underline white" href="#">
+            <Link className="no-underline white" to='/statistics'>
               <FormattedMessage id="side-menu.statistics" />
-            </a>
+            </Link>
           </div>
           <hr className="w-100"/>
           <div className="b pv3">
