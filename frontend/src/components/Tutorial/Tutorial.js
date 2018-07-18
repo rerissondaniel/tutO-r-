@@ -10,7 +10,6 @@ const references = [
   "https://www.geeksforgeeks.org/dynamic-programming/",
   "https://www.hackerearth.com/practice/algorithms/dynamic-programming/introduction-to-dynamic-programming-1/tutorial/"
 ];
-
 class Tutorial extends Component {
   constructor(props) {
   	super(props);
