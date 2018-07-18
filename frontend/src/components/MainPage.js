@@ -55,7 +55,7 @@ class MainPage extends Component {
       language
     });
   };
-
+  
   render() {
     const { language } = this.state;
     

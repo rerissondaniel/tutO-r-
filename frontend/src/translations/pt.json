@@ -1,4 +1,6 @@
 {
+  "auth-box.login": "Logar",
+  "auth-box.signup": "Registrar",
   "notifications.no-notifications": "Sem notificações",
   "search-bar.search": "Buscar",
   "dropdown-menu.profile": "Perfil",
@@ -8,5 +10,12 @@
   "side-menu.training": "Treinamento",
   "side-menu.statistics": "Estatística",
   "side-menu.calendar": "Calendário",
-  "side-menu.repository": "Repositório"
+  "side-menu.repository": "Repositório",
+  "auth-box.username": "Nome do Usuário",
+  "auth-box.password": "Senha",
+  "auth-box.forget-password": "Esqueceu sua senha?",
+  "auth-box.remember-me": "Lembrar-me",
+  "auth-box.full-name": "Nome Completo",
+  "auth-box.email": "E-mail",
+  "auth-box.confirm-password": "Confirme a senha"
 }
