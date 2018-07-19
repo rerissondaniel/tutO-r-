@@ -1,108 +1,182 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 
-// Temporary function
-function userTagList() {
-  return [
-    {
-      name: "Programação Dinâmica",
-      url: "#0"
-    },
-    {
-      name: "Fluxo",
-      url: "#0"
-    },
-    {
-      name: "Matemática",
-      url: "#0"
-    },
-    {
-      name: "FFT",
-      url: "#0"
-    },
-    {
-      name: "Árvores",
-      url: "#0"
-    },
-    {
-      name: "Algoritmos Gulosos",
-      url: "#0"
-    },
-    {
-      name: "Estruturas de Dados",
-      url: "#0"
-    },
-    {
-      name: "Ad-hoc",
-      url: "#0"
-    },
-    {
-      name: "Geometria",
-      url: "#0"
-    }
-  ];
-};
+import Graphic from './Graphic';
 
-export default class Statistics extends Component {
+const VERDICTS = 'verdicts';
+const PROGRAMMING_LANGUAGES = 'programming-languages';
+const GRAPHIC_TYPE = 'pie';
 
-  // temporary images for illustrative purposes only
-  userVerdicts() {
-    return (
-      <div className="pv4">
-        <h1 className="f3 dark-green">Veredictos</h1>
-        <img src="/src/components/Statistics/exampleStatisticsVerdicts.png" className="mw-100"/>  
-      </div>
-    );
+class Statistics extends Component {
+  constructor(props) {
+    super(props);
+
+    this.getVerdicts = this.getVerdicts.bind(this);
+    this.getProgrammingLanguages = this.getProgrammingLanguages.bind(this);
   }
 
-  // temporary images for illustrative purposes only
-  userLanguages() {
-    return (
-      <div className="pv4">
-        <h1 className="f3 dark-green">Linguagens de Programação</h1>
-        <img src="/src/components/Statistics/exampleStatisticsLanguages.png" className="mw-100"/>  
-      </div>
-    );
+  getData(map, total) {
+    let data = [];
+    for (const prop in map) {
+      data.push({
+        label: prop,
+        y: (map[prop] / total * 100).toFixed(2)
+      });
+    };
+    return data;
+  }
+  
+  getVerdicts(submissions) {
+    let verdicts = [];
+    submissions.forEach(submission => {
+      if (!verdicts[submission.verdict]) {
+        verdicts[submission.verdict] = 0;
+      }
+      verdicts[submission.verdict]++;
+    });
+    return this.getData(verdicts, submissions.length);
   }
 
-  // temporary images for illustrative purposes only
-  userActivities() {
-    return (
-      <div className="ph3 ph5-ns pv4">
-        <h1 className="f3 dark-green pa2">Atividades</h1>
-        <img src="/src/components/Statistics/exampleStatisticsActivities.png" className="mw-100 pa2"/>  
-      </div>
-    );
+  getProgrammingLanguages(submissions) {
+    let pLanguages = [];
+    submissions.forEach(submission => {
+      if (!pLanguages[submission.programmingLanguage]) {
+        pLanguages[submission.programmingLanguage] = 0;
+      }
+      pLanguages[submission.programmingLanguage]++;
+    });
+    return this.getData(pLanguages, submissions.length);
   }
 
-  userTags() {
-    return (
-  		<nav className="ph3 ph5-ns pv4">
-        <h1 className="f3 dark-green">Tags</h1>
-  			<div className="nowrap overflow-x-auto">
-    			{userTagList().map(tag => 
-            <a className="f3 link dim br1 ph3 pv2 mb2 dib white bg-green botao-tag" href={tag.url} key={tag.name}> {tag.name} </a>)}
-    		</div>
-    	</nav>
-    );
-  };
-
+  renderTags(submissions) {
+    let tagsMap = [];
+    let tagsList = [];
+    submissions.forEach(submission => {
+      submission.tags.forEach(entry => {
+        if (!tagsMap[entry.tag]) {
+          tagsMap[entry.tag] = true;
+          tagsList.push(entry.tag);
+        }
+      });
+    });
+    tagsList.sort();
+    return tagsList.map(tag => (
+      <div className="statistics__tag pointer flex br1 bg-green white b ma1 items-center justify-center" key={tag}>
+        {tag.toUpperCase()}
+      </div>
+    ));
+  }
+  
   render() {
+    const { intl, submissions } = this.props;
+
     return (
-      <React.Fragment>
-        <h1 className="ph3 ph5-ns pv4 f2 tracked blue">Estatísticas</h1>
-        
-        <div className="cf ph3 ph5-ns">
-          <div className="fl w-100 w-50-l pa2">
-            {this.userVerdicts()}
+      <div className="w-100 ph5">
+        <h1 className="blue">
+          <FormattedMessage id="side-menu.statistics" />
+        </h1>
+        <div className="flex flex-column">
+          
+          <div className="flex flex-row pv4 ph4">
+            <Graphic 
+              container={VERDICTS}
+              type={GRAPHIC_TYPE}
+              title={intl.formatMessage({ id: 'statistics-verdicts' })}
+              data={this.getVerdicts(submissions)}
+            />
+            <Graphic 
+              container={PROGRAMMING_LANGUAGES} 
+              type={GRAPHIC_TYPE}
+              title={intl.formatMessage({ id: 'statistics-programming-languages' })}
+              data={this.getProgrammingLanguages(submissions)}
+            />
           </div>
-          <div className="fl w-100 w-50-l pa2">
-            {this.userLanguages()}
+
+          <div className="flex flex-column items-center overflow-y-auto">
+            <h2 className="blue">Tags</h2>
+            <div className="inline-flex flex-wrap">
+              { this.renderTags(submissions) }  
+            </div>
           </div>
         </div>
-
-        {this.userActivities()}
-        {this.userTags()}
-      </React.Fragment>
+      </div>
     );
   };
 };
+
+Statistics.propTypes = {
+  intl: intlShape,
+  submissions: PropTypes.arrayOf(
+    PropTypes.shape({
+      tags: PropTypes.arrayOf(
+        PropTypes.shape({
+          tag: PropTypes.string.isRequired
+        })
+      ).isRequired,
+      verdict: PropTypes.string.isRequired,
+      programmingLanguage: PropTypes.string.isRequired
+    })
+  ),
+};
+
+Statistics.defaultProps = {
+  submissions: [
+    {
+      tags: [
+        { tag: 'dp' },
+        { tag: 'flows' },
+        { tag: 'ad-hoc' }
+      ],
+      verdict: "OK",
+      programmingLanguage: "C++"
+    },
+    {
+      tags: [
+        { tag: 'geometry' },
+      ],
+      verdict: "Time Limit Exceeded",
+      programmingLanguage: "C++"
+    },
+    {
+      tags: [
+        { tag: 'graphs' },
+        { tag: 'brute force' }
+      ],
+      verdict: "OK",
+      programmingLanguage: "Python"
+    },
+    {
+      tags: [
+        { tag: 'brute force' },
+        { tag: 'math' }
+      ],
+      verdict: "Wrong Answer",
+      programmingLanguage: "Ruby"
+    },
+    {
+      tags: [
+        { tag: 'brute force' },
+        { tag: 'math' }
+      ],
+      verdict: "Wrong Answer",
+      programmingLanguage: "Ruby"
+    },
+    {
+      tags: [
+        { tag: 'flows' },
+      ],
+      verdict: "Compilation Error",
+      programmingLanguage: "Ruby"
+    },
+    {
+      tags: [
+        { tag: 'flows' },
+      ],
+      verdict: "OK",
+      programmingLanguage: "Ruby"
+    }
+  ]
+};
+
+export default injectIntl(Statistics);
