@@ -14,6 +14,7 @@ import { createBrowserHistory } from 'history';
 import SideMenu from './SideMenu';
 import TopBar from './TopBar';
 import Statistics from './Statistics';
+import Themes from './Themes';
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
 
@@ -63,7 +64,8 @@ class MainPage extends Component {
           <Switch>
             <Route path='/' render={(props) => (
               <IntlProvider locale={language} messages={translations[language]}>
-                <div className="inline-flex w-100">
+                <Themes />
+                {/* <div className="inline-flex w-100">
                   <div className="w-20">
                     <SideMenu />
                   </div>
@@ -73,7 +75,7 @@ class MainPage extends Component {
                       onLanguageSelected={this.changeLanguage} />
                     <Route path='/statistics' component={Statistics} />
                   </div>
-                </div>
+                </div> */}
               </IntlProvider>
             )} />
           </Switch>

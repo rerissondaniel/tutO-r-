@@ -82,13 +82,13 @@ class Statistics extends Component {
             <Graphic 
               container={VERDICTS}
               type={GRAPHIC_TYPE}
-              title={intl.formatMessage({ id: 'statistics-verdicts' })}
+              title={intl.formatMessage({ id: 'statistics.verdicts' })}
               data={this.getVerdicts(submissions)}
             />
             <Graphic 
               container={PROGRAMMING_LANGUAGES} 
               type={GRAPHIC_TYPE}
-              title={intl.formatMessage({ id: 'statistics-programming-languages' })}
+              title={intl.formatMessage({ id: 'statistics.programming-languages' })}
               data={this.getProgrammingLanguages(submissions)}
             />
           </div>
