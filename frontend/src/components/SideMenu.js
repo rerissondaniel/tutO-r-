@@ -13,7 +13,7 @@ class SideMenu extends Component {
             <img className="w-60" src={logoWhite} alt="Logo" />
           </div>
           <div className="b pv3">
-            <Link className="no-underline white" to='/home/tournament'>
+            <Link className="no-underline white" to='/home/training'>
               <FormattedMessage id="side-menu.training" />
             </Link>
           </div>

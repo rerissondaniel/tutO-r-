@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
+import { Link } from "react-router-dom";
 
 class ThemesItem extends Component {
   getBackground(status) {
@@ -34,9 +35,9 @@ class ThemesItem extends Component {
           </div>
         </div>
         <div className={`flex items-center justify-center w-10 ba ${this.getBackground(status)} br3`}>
-          <span className="white b f4">
+          <Link className="white b f4" to='/home/tutorial'>
             {status}
-          </span>
+          </Link>
         </div>
       </div>
     );
