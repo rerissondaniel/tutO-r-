@@ -6,6 +6,7 @@ import defaultProfileIcon from '../images/default-profile-icon.svg';
 
 import { logoutUser } from '../actions/LogoutUser';
 import { connect } from "react-redux";
+import {Link} from "react-router-dom";
 
 class DropdownMenu extends Component {
   constructor(props) {
@@ -34,9 +35,9 @@ class DropdownMenu extends Component {
         </div>
         <div className="dropdown-content dn absolute z-max ba br1 b--dark-blue pv3 ph3 right-0">
           <div className="flex flex-column items-center b">
-            <a className="no-underline black" href="#">
+            <Link to='/home/profile' className="no-underline black" href="#">
               <FormattedMessage id="dropdown-menu.profile" />  
-            </a> 
+            </Link> 
             <hr className="w-100" />
             <a className="no-underline black" href="#">
               <FormattedMessage id="dropdown-menu.settings" />  
@@ -46,9 +47,9 @@ class DropdownMenu extends Component {
               <FormattedMessage id="dropdown-menu.help" />  
             </a>
             <hr className="w-100" />
-            <a className="no-underline red" href="#" onClick={this.logout}>
+            <Link to="/" className="no-underline red" href="#" onClick={this.logout}>
               <FormattedMessage id="dropdown-menu.exit" />  
-            </a>
+            </Link>
           </div>
         </div>
       </div>

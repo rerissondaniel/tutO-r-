@@ -14,13 +14,13 @@ class SideMenu extends Component {
             </h1>
           </div>
           <div className="b pv3">
-            <a className="no-underline white" href="#">
+            <Link className="no-underline white" to='/home/tournament'>
               <FormattedMessage id="side-menu.training" />
-            </a>
+            </Link>
           </div>
           <hr className="w-100"/>
           <div className="b pv3">
-            <Link className="no-underline white" to='/statistics'>
+            <Link className="no-underline white" to='/home/statistics'>
               <FormattedMessage id="side-menu.statistics" />
             </Link>
           </div>
