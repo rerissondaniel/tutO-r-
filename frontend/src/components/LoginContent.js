@@ -41,7 +41,7 @@ class LoginContent extends Component {
     return (
       <div className="h-100 w-100 flex flex-column items-center justify-center pt5">
         <div className="flex justify-center w-100 pv2">
-          <input className="w-80 pa2 gray outline-0" type="text" placeholder={intl.formatMessage({ id: 'auth-box.username' })} onChange={this.setCredentials('email')} />
+          <input className="w-80 pa2 gray outline-0" type="text" placeholder={intl.formatMessage({ id: 'auth-box.email' })} onChange={this.setCredentials('email')} />
         </div>
         <div className="flex justify-center w-100 pv2">
           <input className="w-80 pa2 gray outline-0" type="password" placeholder={intl.formatMessage({ id: 'auth-box.password' })} onChange={this.setCredentials('password')} />
