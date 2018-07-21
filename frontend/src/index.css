@@ -84,8 +84,16 @@
   width: 400px;
 }
 
-.botao-tag + .botao-tag {
-	margin-left: .75rem; 
+.statistics__tag {
+  height: 30px;
+  width: 150px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.graphics-container {
+  height: 300px;
 }
 
 .center-alignment {

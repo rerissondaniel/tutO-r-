@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 import { IntlProvider, addLocaleData } from 'react-intl';
 
-import TopBar from './TopBar';
-import SideMenu from './SideMenu';
-
-import Auth from './Auth';
-import Statistics from "./Statistics";
-
 import ptLocale from 'react-intl/locale-data/pt';
 import enLocale from 'react-intl/locale-data/en';
 
@@ -20,6 +14,10 @@ import AuthBox from './AuthBox';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import Tutorial from "./Tutorial/Tutorial";
 import Profile from "./Profile/Profile";
+
+import SideMenu from './SideMenu';
+import TopBar from './TopBar';
+import Statistics from './Statistics';
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
 
