@@ -18,6 +18,9 @@
   "auth-box.full-name": "Nome Completo",
   "auth-box.email": "E-mail",
   "auth-box.confirm-password": "Confirme a senha",
-  "statistics-verdicts": "Vereditos",
-  "statistics-programming-languages": "Linguagens de Programação"
+  "statistics.verdicts": "Vereditos",
+  "statistics.programming-languages": "Linguagens de Programação",
+  "themes.themes": "Temas",
+  "themes.prerequisites": "Pré-Requisitos",
+  "themes.none": "Nenhum"
 }

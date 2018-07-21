@@ -18,6 +18,7 @@ import Profile from "./Profile/Profile";
 import SideMenu from './SideMenu';
 import TopBar from './TopBar';
 import Statistics from './Statistics';
+import Themes from './Themes';
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
 
@@ -67,7 +68,8 @@ class MainPage extends Component {
           <Switch>
             <Route path='/home' render={(props) => (
               <IntlProvider locale={language} messages={translations[language]}>
-                <div className="inline-flex w-100">
+                <Themes />
+                {/* <div className="inline-flex w-100">
                   <div className="w-20">
                     <SideMenu />
                   </div>
@@ -79,7 +81,7 @@ class MainPage extends Component {
                     <Route path='/home/tournament' component={Tutorial} />
                     <Route path='/home/profile' component={Profile} />
                   </div>
-                </div>
+                </div> */}
               </IntlProvider>
             )} />
             <Route path='/' render={(props) => (
