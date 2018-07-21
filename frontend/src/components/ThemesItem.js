@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 
 class ThemesItem extends Component {
-  getBackground = status => {
+  getBackground(status) {
     if (status === 'Explorar') return 'bg-light-blue b--dark-blue';
     if (status === 'Explorado') return 'bg-green b--dark-green';
     if (status === 'Explorando') return 'bg-yellow b--gold';
