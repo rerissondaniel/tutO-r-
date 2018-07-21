@@ -16,6 +16,8 @@ import enMessages from '../translations/en';
 
 import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
 import { createBrowserHistory } from 'history';
+import AuthBox from './AuthBox';
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
 
@@ -37,7 +39,7 @@ const translations = {
   'en': enMessages
 };
 
-const history = createBrowserHistory({});
+export const history = createBrowserHistory({});
 
 class MainPage extends Component {
   constructor(props) {
@@ -48,6 +50,7 @@ class MainPage extends Component {
     };
 
     this.changeLanguage = this.changeLanguage.bind(this);
+    console.log(this.props);
   };
 
   changeLanguage(language) {
@@ -63,7 +66,7 @@ class MainPage extends Component {
       <BrowserRouter>
         <Router history={history}>
           <Switch>
-            <Route path='/' render={(props) => (
+            <Route path='/home' render={(props) => (
               <IntlProvider locale={language} messages={translations[language]}>
                 <div className="inline-flex w-100">
                   <div className="w-20">
@@ -73,10 +76,17 @@ class MainPage extends Component {
                     <TopBar
                       countries={countries}
                       onLanguageSelected={this.changeLanguage} />
-                    <Route path='/statistics' component={Statistics} />
+                    <Route path='/home/statistics' component={Statistics} />
                   </div>
                 </div>
               </IntlProvider>
+            )} />
+            <Route path='/' render={(props) => (
+              <div align="center">
+                <IntlProvider locale={language} messages={translations[language]}>
+                  <AuthBox />
+                </IntlProvider>
+              </div>
             )} />
           </Switch>
         </Router>

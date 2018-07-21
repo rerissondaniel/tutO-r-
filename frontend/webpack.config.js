@@ -42,6 +42,12 @@ module.exports = {
     ]
   },
   devServer: {
+    contentBase: "./",
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    host: 'localhost',
+    port: 8080,
     proxy: {
       '/api': 'http://localhost:3000'
     }
@@ -50,6 +56,5 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin({
       multiStep: true
     })
-  ],
-  plugins: [htmlPlugin]
+  ]
 };

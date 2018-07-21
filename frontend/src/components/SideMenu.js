@@ -20,7 +20,7 @@ class SideMenu extends Component {
           </div>
           <hr className="w-100"/>
           <div className="b pv3">
-            <Link className="no-underline white" to='/statistics'>
+            <Link className="no-underline white" to='/home/statistics'>
               <FormattedMessage id="side-menu.statistics" />
             </Link>
           </div>
