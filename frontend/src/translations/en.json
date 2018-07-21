@@ -17,5 +17,7 @@
   "auth-box.remember-me": "Remember me",
   "auth-box.full-name": "Full Name",
   "auth-box.email": "E-mail",
-  "auth-box.confirm-password": "Confirm password"
+  "auth-box.confirm-password": "Confirm password",
+  "statistics-verdicts": "Verdicts",
+  "statistics-programming-languages": "Programming Languages"
 }

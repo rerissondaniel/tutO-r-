@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 import { IntlProvider, addLocaleData } from 'react-intl';
 
-import TopBar from './TopBar';
-import SideMenu from './SideMenu';
-
-import Auth from './Auth';
-import Statistics from "./Statistics";
-
 import ptLocale from 'react-intl/locale-data/pt';
 import enLocale from 'react-intl/locale-data/en';
 
@@ -16,6 +10,10 @@ import enMessages from '../translations/en';
 
 import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
 import { createBrowserHistory } from 'history';
+
+import SideMenu from './SideMenu';
+import TopBar from './TopBar';
+import Statistics from './Statistics';
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
 

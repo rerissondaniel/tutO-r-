@@ -8,7 +8,7 @@
   "dropdown-menu.help": "Ajuda",
   "dropdown-menu.exit": "Sair",
   "side-menu.training": "Treinamento",
-  "side-menu.statistics": "Estatística",
+  "side-menu.statistics": "Estatísticas",
   "side-menu.calendar": "Calendário",
   "side-menu.repository": "Repositório",
   "auth-box.username": "Nome do Usuário",
@@ -17,5 +17,7 @@
   "auth-box.remember-me": "Lembrar-me",
   "auth-box.full-name": "Nome Completo",
   "auth-box.email": "E-mail",
-  "auth-box.confirm-password": "Confirme a senha"
+  "auth-box.confirm-password": "Confirme a senha",
+  "statistics-verdicts": "Vereditos",
+  "statistics-programming-languages": "Linguagens de Programação"
 }
