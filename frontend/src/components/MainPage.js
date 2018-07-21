@@ -18,6 +18,7 @@ import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
 import { createBrowserHistory } from 'history';
 import AuthBox from './AuthBox';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import Tutorial from "./Tutorial/Tutorial";
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
 
@@ -50,7 +51,6 @@ class MainPage extends Component {
     };
 
     this.changeLanguage = this.changeLanguage.bind(this);
-    console.log(this.props);
   };
 
   changeLanguage(language) {
@@ -77,12 +77,13 @@ class MainPage extends Component {
                       countries={countries}
                       onLanguageSelected={this.changeLanguage} />
                     <Route path='/home/statistics' component={Statistics} />
+                    <Route path='/home/tournament' component={Tutorial} />
                   </div>
                 </div>
               </IntlProvider>
             )} />
             <Route path='/' render={(props) => (
-              <div align="center">
+              <div align="center" className="center">
                 <IntlProvider locale={language} messages={translations[language]}>
                   <AuthBox />
                 </IntlProvider>

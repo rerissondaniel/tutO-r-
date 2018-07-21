@@ -10,14 +10,12 @@ class LoginContent extends Component {
     super(props);
 
     this.state = {
-      login: true,
       email: '',
       password: ''
     };
 
     this.login = this.login.bind(this);
     this.setCredentials = this.setCredentials.bind(this);
-    this.clearState.bind(this);
   };
 
   login() {
@@ -29,21 +27,12 @@ class LoginContent extends Component {
       
       this.props.loginUser(requestHeader);
       history.push({pathname: '/home'});
-      this.clearState();
     });
   };
 
   setCredentials =  field => event => {
     this.setState({
       [field]: event.target.value
-    });
-  };
-
-  clearState() {
-    this.setState({
-      email: '',
-      password: '',
-      login: true
     });
   };
 
