@@ -19,6 +19,7 @@ import { createBrowserHistory } from 'history';
 import AuthBox from './AuthBox';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import Tutorial from "./Tutorial/Tutorial";
+import Profile from "./Profile/Profile";
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
 
@@ -78,12 +79,13 @@ class MainPage extends Component {
                       onLanguageSelected={this.changeLanguage} />
                     <Route path='/home/statistics' component={Statistics} />
                     <Route path='/home/tournament' component={Tutorial} />
+                    <Route path='/home/profile' component={Profile} />
                   </div>
                 </div>
               </IntlProvider>
             )} />
             <Route path='/' render={(props) => (
-              <div align="center" className="center">
+              <div align="center" className="center-alignment">
                 <IntlProvider locale={language} messages={translations[language]}>
                   <AuthBox />
                 </IntlProvider>

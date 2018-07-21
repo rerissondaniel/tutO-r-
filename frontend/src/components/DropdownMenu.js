@@ -35,9 +35,9 @@ class DropdownMenu extends Component {
         </div>
         <div className="dropdown-content dn absolute z-max ba br1 b--dark-blue pv3 ph3 right-0">
           <div className="flex flex-column items-center b">
-            <a className="no-underline black" href="#">
+            <Link to='/home/profile' className="no-underline black" href="#">
               <FormattedMessage id="dropdown-menu.profile" />  
-            </a> 
+            </Link> 
             <hr className="w-100" />
             <a className="no-underline black" href="#">
               <FormattedMessage id="dropdown-menu.settings" />  

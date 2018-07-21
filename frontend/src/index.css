@@ -87,3 +87,7 @@
 .botao-tag + .botao-tag {
 	margin-left: .75rem; 
 }
+
+.center-alignment {
+  margin-top: 10%;
+}
