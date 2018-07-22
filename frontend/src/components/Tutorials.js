@@ -26,7 +26,7 @@ tutorials = {
 			"https://www.geeksforgeeks.org/dynamic-programming/",
 			"https://www.hackerearth.com/practice/algorithms/dynamic-programming/introduction-to-dynamic-programming-1/tutorial/"
 		]
-	}
+	},
 
 	greedy:
 	{
@@ -54,7 +54,7 @@ tutorials = {
 			"https://en.wikipedia.org/wiki/Greedy_algorithm",
 			"https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/tutorial/"
 		]
-	}
+	},
 
 	math:
 	{
@@ -82,4 +82,4 @@ tutorials = {
 			"https://artofproblemsolving.com/community/c90633h1291397"
 		]
 	}
-}
+};
