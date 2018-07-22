@@ -13,6 +13,12 @@ import { createBrowserHistory } from 'history';
 import AuthBox from './AuthBox';
 
 import logo from '../images/logo.png';
+import SideMenu from './SideMenu';
+import TopBar from './TopBar';
+import Tutorial from "./Tutorial/Tutorial";
+import Profile from "./Profile/Profile";
+import Statistics from "./Statistics";
+import Themes from './Themes';
 
 addLocaleData([ ...ptLocale, ...enLocale ]);
 
@@ -60,6 +66,24 @@ class MainPage extends Component {
       <BrowserRouter>
         <Router history={history}>
           <Switch>
+            <Route path='/home' render={(props) => (
+                <IntlProvider locale={language} messages={translations[language]}>
+                  <div className="inline-flex w-100">
+                    <div className="w-20">
+                      <SideMenu />
+                    </div>
+                    <div className="w-80">
+                      <TopBar
+                        countries={countries}
+                        onLanguageSelected={this.changeLanguage} />
+                      <Route path='/home/statistics' component={Statistics} />
+                      <Route path='/home/training' component={Themes} />
+                      <Route path='/home/tutorial' component={Tutorial} />
+                      <Route path='/home/profile' component={Profile} />
+                    </div>
+                  </div>
+                </IntlProvider>
+              )} />
             <Route path='/' render={(props) => (
               <div align="center" className="center-alignment">
                 <IntlProvider locale={language} messages={translations[language]}>
